@@ -14,7 +14,7 @@ profiles:
 
     location_mode: remote
     city: "Kansas City, MO"
-    radius_km: 100
+    radius_km: 110
 
     experience_min_years: 1
     experience_max_years: 3
