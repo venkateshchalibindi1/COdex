@@ -1,35 +1,73 @@
 excel_path: data/job_tracker.xlsx
+
 profiles:
   - name: default
-    target_titles: ["IT Support Specialist", "Help Desk Analyst"]
-    adjacent_titles: ["Desktop Support", "Technical Support Specialist"]
-    location_mode: "Remote"
-    city: ""
-    radius_km: 0
+    target_titles:
+      - "Network Engineer"
+      - "NOC Engineer"
+      - "Network Support Engineer"
+      - "Junior Network Administrator"
+
+    adjacent_titles:
+      - "Desktop Support"
+      - "Technical Support Specialist"
+
+    location_mode: remote
+    city: "Kansas City, MO"
+    radius_km: 100
+
     experience_min_years: 1
     experience_max_years: 3
-    must_have_keywords: ["troubleshooting", "customer service"]
-    nice_to_have_keywords: ["azure", "active directory", "ticketing"]
-    exclude_keywords: ["senior", "principal", "clearance"]
-    time_window_days: 7
-    master_resume_skills: ["windows", "active directory", "networking", "troubleshooting", "python"]
+
+    must_have_keywords:
+      - "CCNA"
+      - "routing"
+      - "switching"
+
+    nice_to_have_keywords:
+      - "firewall"
+      - "palo alto"
+      - "tcp/ip"
+      - "bgp"
+
+    exclude_keywords:
+      - "senior"
+      - "lead"
+      - "principal"
+      - "manager"
+      - "clearance"
+      - "TS/SCI"
+      - "10+ years"
+
+    time_window_days: 1
+
+    master_resume_skills:
+      - "windows"
+      - "active directory"
+      - "networking"
+      - "troubleshooting"
+      - "python"
+
 sources:
   rss_feeds:
     - name: "RemoteOK RSS"
       url: "https://remoteok.com/remote-dev-jobs.rss"
   greenhouse_boards: []
   lever_boards: []
+
 discovery:
   enabled: false
-  provider: "disabled"
+  provider: disabled
   api_key: ""
+
 collector:
   use_playwright: false
   per_domain_delay_seconds: 5
   max_retries: 2
+
 filters:
   exclude_domains: []
-  exclude_keywords: []
-  seniority_mode: "downrank"
+  seniority_mode: downrank
+
 limits:
   max_jobs_per_run: 300
